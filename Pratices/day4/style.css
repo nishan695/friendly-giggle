@@ -1,0 +1,82 @@
+<style>
+    body {
+        margin: 0;
+        font-family: nunito;
+    }
+
+    header {
+        height: 70px;
+        background-color: #222;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        gap: 25;
+
+        padding: 0 25px;
+    }
+
+    header h2 {
+        margin-right: 20px;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+    }
+
+    header input {
+        margin-left: auto;
+        padding: 10px;
+        width: 250px;
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    main {
+        display: grid;
+
+        grid-template-columns: 220px 1fr;
+
+        height: calc(100vh - 130px);
+    }
+    aside {
+        background-color: lightblue;
+           padding: 20px;
+    }
+
+    aside button {
+        width: 100%;
+        padding: 10px;
+    }
+    section {
+        padding: 25px;
+
+        overflow-y: auto;
+    }
+
+    section > div {
+        display: flex;
+        gap: 20px;
+    }
+
+    article {
+        background-color: lightblue;
+        width: 180px;
+        padding: 15px;
+        border-radius: 10px;
+    footer {
+        height: 60px;
+        background-color: #222;
+        color: pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    footer p {
+        margin-right: 30px;
+    }
+</style>
