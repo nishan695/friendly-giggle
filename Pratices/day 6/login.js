@@ -1,5 +1,7 @@
-function login{
-    event.preventDefault()
+function login (event)
+{
+    event.preventdefault();
+  
     const email= document.getElementById("email").value;
     const password=document.getElementById("password").value;
 

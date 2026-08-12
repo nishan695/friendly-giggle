@@ -4,7 +4,20 @@
 > today i continued learning HTMl and was 
 introduced to some basic concept of css
 
-### connecting css with HTML 
+1. HTML Document Structure
+ I learned about the main elements usedd to structure an HTML 
+ document:
+
+ - <html> root of the html document
+ - <head> contains information about the webpage
+ - <meta> provides metadat about the document
+ - <title> defines the title shown in the browser tab
+ - <link> connects external resources such as css files
+ - <body> contains the visible content of the web page 
+ - <header> represents the introductory header section 
+ - <footer> represents the footer section 
+
+## connecting css with HTML 
 > I learned how to attach a css file to an
 HTML document.
 
