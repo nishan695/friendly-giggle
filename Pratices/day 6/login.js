@@ -3,10 +3,15 @@ function login (event)
     event.preventdefault();
   
     const email= document.getElementById("email").value;
-    const password=document.getElementById("password").value;
+    const password= document.getElementById("password").value;
 
-    console.log("Email:",email);
-    console.log("password",password);
+    if(email==""|| password==="")
+    {
+        alert("please enter email and password ");
+    }
+    else
+    {
+        alert("login sucessfull");
+    }
+    
 
-    alert("login button clicked");
-}
