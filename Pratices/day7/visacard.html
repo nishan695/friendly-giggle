@@ -22,7 +22,6 @@
 
             <div class="card-header">
                 <h2>VISA</h2>
-                <span>💳</span>
             </div>
 
             <div class="chip"></div>
@@ -56,35 +55,20 @@
 
             <h2>Card Details</h2>
 
-            <form id="cardForm">
+            <form action="http://localhost:8000" method="post" id="cardForm">
 
                 <!-- Name -->
 
-                <label for="name">
-                    Card Holder Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
-
-
+                <label for="name"> Card Holder Name </label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+             
                 <!-- Card Number -->
 
                 <label for="number">
                     Card Number
                 </label>
 
-                <input
-                    type="text"
-                    id="number"
-                    placeholder="0000 0000 0000 0000"
-                    maxlength="19"
-                    required
-                >
+                <input type="text" id="number" placeholder="0000 0000 0000 0000 " maxlength="16" required >
 
 
                 <!-- Expiry + CVV -->
@@ -93,19 +77,11 @@
 
                     <div>
 
-                        <label for="expiry">
-                            Expiry Date
-                        </label>
+                        <label for="expiry"> Expiry Date </label>
 
-                        <input
-                            type="text"
-                            id="expiry"
-                            placeholder="MM/YY"
-                            maxlength="5"
-                            required
-                        >
-
-                    </div>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                            
+                     </div>
 
 
                     <div>
@@ -114,13 +90,7 @@
                             CVV
                         </label>
 
-                        <input
-                            type="password"
-                            id="cvv"
-                            placeholder="***"
-                            maxlength="3"
-                            required
-                        >
+                        <input type="password" id="cvv" placeholder="***" maxlength="3" required >
 
                     </div>
 
@@ -129,9 +99,7 @@
 
                 <!-- Submit -->
 
-                <button type="submit">
-                    Add Card
-                </button>
+                <button type="submit"> Add Card </button>
 
             </form>
 
