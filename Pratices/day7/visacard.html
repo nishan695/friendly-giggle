@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visa Card</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- =========================
+             VISA CARD
+        ========================== -->
+
+        <div class="visa-card">
+
+            <div class="card-header">
+                <h2>VISA</h2>
+                <span>💳</span>
+            </div>
+
+            <div class="chip"></div>
+
+            <div class="card-number" id="displayNumber">
+                0000 0000 0000 0000
+            </div>
+
+            <div class="card-info">
+
+                <div>
+                    <small>CARD HOLDER</small>
+                    <p id="displayName">YOUR NAME</p>
+                </div>
+
+                <div>
+                    <small>EXPIRES</small>
+                    <p id="displayExpiry">MM/YY</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FORM
+        ========================== -->
+
+        <div class="form-container">
+
+            <h2>Card Details</h2>
+
+            <form id="cardForm">
+
+                <!-- Name -->
+
+                <label for="name">
+                    Card Holder Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <!-- Card Number -->
+
+                <label for="number">
+                    Card Number
+                </label>
+
+                <input
+                    type="text"
+                    id="number"
+                    placeholder="0000 0000 0000 0000"
+                    maxlength="19"
+                    required
+                >
+
+
+                <!-- Expiry + CVV -->
+
+                <div class="two-inputs">
+
+                    <div>
+
+                        <label for="expiry">
+                            Expiry Date
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expiry"
+                            placeholder="MM/YY"
+                            maxlength="5"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="cvv">
+                            CVV
+                        </label>
+
+                        <input
+                            type="password"
+                            id="cvv"
+                            placeholder="***"
+                            maxlength="3"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button type="submit">
+                    Add Card
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             TABLE
+        ========================== -->
+
+        <div class="table-container">
+
+            <h2>Saved Cards</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Card Holder</th>
+                        <th>Card Number</th>
+                        <th>Expiry</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="cardTable">
+
+                    <!-- JavaScript will add rows here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

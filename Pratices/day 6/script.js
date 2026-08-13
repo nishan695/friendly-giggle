@@ -13,5 +13,3 @@ function login (event)
     {
         alert("login sucessfull");
     }
-    
-
