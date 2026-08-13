@@ -1,35 +1,31 @@
 const form = document.getElementById("enrollmentForm");
 
-form.addEventListener("submit", function(event) {
-
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const address = document.getElementById("address").value;
-    const course = document.getElementById("course").value;
-    const education = document.getElementById("education").value;
-    const source = document.getElementById("source").value;
-
-
     const data = {
-        name: name,
-        email: email,
-        phone: phone,
-        address: address,
-        course: course,
-        education: education,
-        source: source
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        course: document.getElementById("course").value
     };
 
+    // Get existing data
+    let enrollments = JSON.parse(
+        localStorage.getItem("enrollments")
+    ) || [];
 
+    // Add new enrollment
+    enrollments.push(data);
+
+    // Save all enrollments
     localStorage.setItem(
-        "enrollmentData",
-        JSON.stringify(data)
+        "enrollments",
+        JSON.stringify(enrollments)
     );
 
+    alert("Enrollment saved!");
 
-    alert("Form submitted successfully!");
-
+    form.reset();
 });
