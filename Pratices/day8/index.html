@@ -3,25 +3,121 @@
 <head>
     <style>
         .outer-box {
-            width: 400px;
-            height: 300px;
-            border: 2px solid black;
+            width: 500px;
+            height: 400px;
+            border: 3px solid black;
             position: relative;
         }
 
-        .inner-box {
+        .box {
             width: 100px;
             height: 100px;
-            background-color: lightblue;
             position: absolute;
-            top: 0;
-            left: 0;
+        }
+
+        .box1 {
+            background: red;
+            animation: move1 6s linear infinite;
+        }
+
+        .box2 {
+            background: blue;
+            animation: move2 6s linear infinite;
+        }
+
+        .box3 {
+            background: green;
+            animation: move3 6s linear infinite;
+        }
+
+        .box4 {
+            background: orange;
+            animation: move4 6s linear infinite;
+        }
+
+        @keyframes move1 {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(400px, 0);
+            }
+
+            50% {
+                transform: translate(400px, 300px);
+            }
+
+            75% {
+                transform: translate(0, 300px);
+            }
+        }
+
+        @keyframes move2 {
+            0%, 100% {
+                transform: translate(400px, 0);
+            }
+
+            25% {
+                transform: translate(400px, 300px);
+            }
+
+            50% {
+                transform: translate(0, 300px);
+            }
+
+            75% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes move3 {
+            0%, 100% {
+                transform: translate(400px, 300px);
+            }
+
+            25% {
+                transform: translate(0, 300px);
+            }
+
+            50% {
+                transform: translate(0, 0);
+            }
+
+            75% {
+                transform: translate(400px, 0);
+            }
+        }
+
+        @keyframes move4 {
+            0%, 100% {
+                transform: translate(0, 300px);
+            }
+
+            25% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(400px, 0);
+            }
+
+            75% {
+                transform: translate(400px, 300px);
+            }
         }
     </style>
 </head>
+
 <body>
+
     <div class="outer-box">
-        <div class="inner-box"></div>
+
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+
     </div>
 
 </body>
