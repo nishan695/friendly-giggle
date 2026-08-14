@@ -28,4 +28,6 @@ form.addEventListener("submit", function (event) {
     alert("Enrollment saved!");
 
     form.reset();
+
+     
 });
