@@ -15,20 +15,19 @@ body {
   font-family: 'Segoe UI', sans-serif;
   border: #ff4b4b;
 }
-..big-box {
+.big-box {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 320px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 40px;              /* more gap so boxes don't touch on a big screen */
-  padding: 80px;          /* space around the edges — boxes stay centered and "a bit big", not edge to edge */
-  background: transparent;
+  gap: 14px;
+  padding: 20px;
+  background: transparent;   /* was #111 — now lets text show through gaps */
   border-radius: 24px;
   box-shadow: 0 0 60px rgba(0, 200, 255, 0.15);
-  border: #ff4b4b;
 }
 .small-box {
   position: relative;
@@ -136,19 +135,4 @@ body {
   40%      { transform: translate(-48%, -51%) rotate(1deg); }
   60%      { transform: translate(-51%, -49%) rotate(-1deg); }
   80%      { transform: translate(-49%, -50%) rotate(1deg); }
-}
-/* Make sure the big-box sits ABOVE the text */
-.big-box {
-  position: relative;
-  z-index: 1;
-  width: 320px;
-  height: 320px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 14px;
-  padding: 20px;
-  background: transparent;   /* was #111 — now lets text show through gaps */
-  border-radius: 24px;
-  box-shadow: 0 0 60px rgba(0, 200, 255, 0.15);
 }
