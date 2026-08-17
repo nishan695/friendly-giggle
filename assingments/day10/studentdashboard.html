@@ -1,257 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>StudentHub Dashboard</title>
+    <title>StudentHub</title>
 
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
 
-    <div class="dashboard">
+    <!-- ================= DRAWER ================= -->
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <aside class="drawer" id="drawer">
 
-            <div class="logo">
-                🎓 StudentHub
+        <div class="drawer-header">
+            <h2>🎓 StudentHub</h2>
+
+            <button id="closeBtn">×</button>
+        </div>
+
+        <nav>
+
+            <a href="#dashboard" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="#students">
+                👨‍🎓 Students
+            </a>
+
+            <a href="#attendance">
+                📅 Attendance
+            </a>
+
+            <a href="#fees">
+                💰 Fees
+            </a>
+
+            <a href="#courses">
+                📚 Courses
+            </a>
+
+            <a href="#settings">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- DARK OVERLAY -->
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- TOP BAR -->
+
+        <header>
+
+            <button id="menuBtn" class="menu">
+                ☰
+            </button>
+
+            <h2>StudentHub</h2>
+
+
+            <div class="top-right">
+
+                <button id="darkBtn">
+                    🌙
+                </button>
+
+                <div class="avatar">
+                    N
+                </div>
+
             </div>
 
-            <nav>
-                <a href="#" class="active">🏠 Dashboard</a>
-                <a href="#students">👨‍🎓 Students</a>
-                <a href="#">📅 Attendance</a>
-                <a href="#">💰 Fees</a>
-                <a href="#">📚 Courses</a>
-                <a href="#">⚙️ Settings</a>
-            </nav>
+        </header>
 
-            <div class="sidebar-bottom">
-                <p>Student Management</p>
-                <small>Version 1.0</small>
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="content">
+
+            <div class="welcome">
+
+                <div>
+                    <h1>Welcome back! 👋</h1>
+
+                    <p>
+                        Manage your students from one place.
+                    </p>
+                </div>
+
+                <button id="addBtn" class="add-btn">
+                    + Add Student
+                </button>
+
             </div>
 
-        </aside>
+
+            <!-- STAT CARDS -->
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <span class="card-icon blue">
+                        👨‍🎓
+                    </span>
+
+                    <div>
+                        <h3 id="studentNumber">120</h3>
+                        <p>Students</p>
+                    </div>
+
+                </div>
 
 
-        <!-- MAIN CONTENT -->
-        <main class="main">
+                <div class="card">
 
-            <!-- TOP BAR -->
-            <header class="topbar">
+                    <span class="card-icon green">
+                        📅
+                    </span>
 
-                <button id="menuBtn" class="menu-btn">☰</button>
+                    <div>
+                        <h3>87%</h3>
+                        <p>Attendance</p>
+                    </div>
 
-                <div class="search-box">
-                    🔍
+                </div>
+
+
+                <div class="card">
+
+                    <span class="card-icon orange">
+                        💰
+                    </span>
+
+                    <div>
+                        <h3>15</h3>
+                        <p>Pending Fees</p>
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <span class="card-icon purple">
+                        📚
+                    </span>
+
+                    <div>
+                        <h3>8</h3>
+                        <p>Courses</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STUDENTS ================= -->
+
+            <div class="section" id="students">
+
+                <div class="section-title">
+
+                    <div>
+                        <h2>Students</h2>
+
+                        <p>
+                            Manage student information
+                        </p>
+                    </div>
+
+
                     <input
                         type="text"
-                        id="searchInput"
-                        placeholder="Search students..."
+                        id="search"
+                        placeholder="🔍 Search student..."
                     >
+
                 </div>
 
-                <div class="profile">
 
-                    <button id="themeBtn" class="icon-btn">
-                        🌙
-                    </button>
+                <div class="table-box">
 
-                    <span class="notification">🔔</span>
+                    <table>
 
-                    <div class="avatar">
-                        N
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Attendance</th>
+                                <th>Fee</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTable">
+
+                            <tr>
+                                <td>01</td>
+                                <td>Ram Sharma</td>
+                                <td>BIT</td>
+                                <td>92%</td>
+                                <td>
+                                    <span class="paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>02</td>
+                                <td>Sita Thapa</td>
+                                <td>BCA</td>
+                                <td>84%</td>
+                                <td>
+                                    <span class="pending">
+                                        Pending
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>03</td>
+                                <td>Hari KC</td>
+                                <td>BIM</td>
+                                <td>78%</td>
+                                <td>
+                                    <span class="paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ATTENDANCE ================= -->
+
+            <div class="section" id="attendance">
+
+                <h2>📅 Attendance</h2>
+
+                <p>
+                    Monitor student attendance.
+                </p>
+
+                <div class="progress">
+
+                    <div class="progress-bar">
+                        87%
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FEES ================= -->
+
+            <div class="section" id="fees">
+
+                <h2>💰 Fees</h2>
+
+                <p>
+                    Track paid and pending student fees.
+                </p>
+
+                <div class="fee-box">
+
+                    <div>
+                        <strong>105</strong>
+                        <span>Paid</span>
                     </div>
 
                     <div>
-                        <strong>Nishan</strong>
-                        <small>Administrator</small>
+                        <strong>15</strong>
+                        <span>Pending</span>
                     </div>
 
                 </div>
 
-            </header>
-            <!-- CONTENT -->
-            <section class="content">
+            </div>
 
-                <!-- WELCOME -->
-                <div class="welcome">
 
-                    <div>
-                        <h1>Welcome back! 👋</h1>
-                        <p>Here's what's happening with your students today.</p>
+            <!-- ================= COURSES ================= -->
+
+            <div class="section" id="courses">
+
+                <h2>📚 Courses</h2>
+
+                <p>
+                    Available courses.
+                </p>
+
+
+                <div class="course-grid">
+
+                    <div class="course">
+                        <h3>BIT</h3>
+                        <p>Information Technology</p>
                     </div>
 
-                    <button id="addStudentBtn" class="add-btn">
-                        + Add Student
-                    </button>
-
-                </div>
-                <!-- STATISTICS -->
-                <div class="stats">
-
-                    <div class="stat-card">
-                        <div class="stat-icon blue">👨‍🎓</div>
-
-                        <div>
-                            <h3 id="studentCount">0</h3>
-                            <p>Total Students</p>
-                            <span class="increase">↑ 12% this month</span>
-                        </div>
+                    <div class="course">
+                        <h3>BCA</h3>
+                        <p>Computer Applications</p>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-icon green">📊</div>
-
-                        <div>
-                            <h3>87%</h3>
-                            <p>Attendance</p>
-                            <span class="increase">↑ 4.2% this month</span>
-                        </div>
+                    <div class="course">
+                        <h3>BIM</h3>
+                        <p>Information Management</p>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-icon orange">💰</div>
-                        <div>
-                            <h3 id="pendingCount">0</h3>
-                            <p>Pending Fees</p>
-                            <span class="warning">Needs attention</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon purple">📚</div>
-
-                        <div>
-                            <h3>8</h3>
-                            <p>Active Courses</p>
-                            <span class="increase">↑ 2 new courses</span>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- STUDENT SECTION -->
-                <div class="student-section" id="students">
-
-                    <div class="section-header">
-
-                        <div>
-                            <h2>Students</h2>
-                            <p>Manage your students</p>
-                        </div>
-                        <button id="clearBtn" class="clear-btn">
-                            Clear All
-                        </button>
-
-                    </div>
-
-                    <!-- TABLE -->
-                    <div class="table-container">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Course</th>
-                                    <th>Attendance</th>
-                                    <th>Fee Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="studentTable">
-                            </tbody>
-
-                        </table>
-
+                    <div class="course">
+                        <h3>BBA</h3>
+                        <p>Business Administration</p>
                     </div>
 
                 </div>
 
-            </section>
-
-        </main>
-
-    </div>
+            </div>
 
 
-    <!-- ADD STUDENT MODAL -->
+            <!-- ================= SETTINGS ================= -->
 
-    <div class="modal" id="studentModal">
+            <div class="section" id="settings">
 
-        <div class="modal-content">
+                <h2>⚙️ Settings</h2>
+
+                <p>
+                    Manage your dashboard preferences.
+                </p>
+
+                <label class="setting">
+
+                    <span>
+                        Dark Mode
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        id="darkToggle"
+                    >
+
+                </label>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= ADD STUDENT ================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
 
             <div class="modal-header">
 
-                <h2>Add New Student</h2>
+                <h2>Add Student</h2>
 
-                <button id="closeModal">
+                <button id="modalClose">
                     ×
                 </button>
 
             </div>
 
+
             <form id="studentForm">
-                <label>
-                    Student Name
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter name"
-                        required
-                    >
-                </label>
 
-                <label>
-                    Email
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter email"
-                        required
-                    >
-                </label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Student name"
+                    required
+                >
 
-                <label>
-                    Course
-                    <select id="course">
-                        <option value="BIT">BIT</option>
-                        <option value="BCA">BCA</option>
-                        <option value="BIM">BIM</option>
-                        <option value="BBA">BBA</option>
-                    </select>
-                </label>
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Course"
+                    required
+                >
 
-                <label>
-                    Attendance (%)
-                    <input
-                        type="number"
-                        id="attendance"
-                        min="0"
-                        max="100"
-                        value="80"
-                    >
+                <input
+                    type="number"
+                    id="attendance"
+                    placeholder="Attendance %"
+                    min="0"
+                    max="100"
+                    required
+                >
 
-                </label>
 
-                <label>
-                    Fee Status
-                    <select id="fee">
+                <select id="fee">
 
-                        <option value="Paid">Paid</option>
-                        <option value="Pending">Pending</option>
-                    </select>
-                </label>
-                <button type="submit" class="submit-btn">
+                    <option value="Paid">
+                        Paid
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
                     Add Student
                 </button>
+
             </form>
+
         </div>
+
     </div>
+
+
     <script src="dash.js"></script>
+
 </body>
+
 </html>

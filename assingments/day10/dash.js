@@ -1,131 +1,141 @@
-// STUDENT DATA
-let students = JSON.parse(localStorage.getItem("students")) || [];
+// ================= DRAWER =================
 
-// GET HTML ELEMENTS
+const drawer = document.getElementById("drawer");
 
-const table = document.getElementById("studentTable");
+const overlay = document.getElementById("overlay");
 
-const studentCount =
-    document.getElementById("studentCount");
+const menuBtn = document.getElementById("menuBtn");
 
-const pendingCount =
-    document.getElementById("pendingCount");
+const closeBtn = document.getElementById("closeBtn");
+
+
+// OPEN DRAWER
+
+menuBtn.addEventListener("click", function () {
+
+    drawer.classList.add("show");
+
+    overlay.classList.add("show");
+
+});
+
+
+// CLOSE DRAWER
+
+closeBtn.addEventListener("click", function () {
+
+    drawer.classList.remove("show");
+
+    overlay.classList.remove("show");
+
+});
+
+
+// CLICK OUTSIDE
+
+overlay.addEventListener("click", function () {
+
+    drawer.classList.remove("show");
+
+    overlay.classList.remove("show");
+
+});
+
+
+// CLOSE AFTER CLICKING MENU ITEM
+
+const links = document.querySelectorAll(".drawer a");
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        drawer.classList.remove("show");
+
+        overlay.classList.remove("show");
+
+    });
+
+});
+
+
+// ================= DARK MODE =================
+
+const darkBtn =
+    document.getElementById("darkBtn");
+
+const darkToggle =
+    document.getElementById("darkToggle");
+
+
+function toggleDarkMode() {
+
+    document.body.classList.toggle("dark");
+
+}
+
+
+// Top dark mode button
+
+darkBtn.addEventListener(
+    "click",
+    toggleDarkMode
+);
+
+
+// Settings checkbox
+
+darkToggle.addEventListener(
+    "change",
+    toggleDarkMode
+);
+
+
+// ================= ADD STUDENT =================
 
 const modal =
-    document.getElementById("studentModal");
+    document.getElementById("modal");
 
-const addStudentBtn =
-    document.getElementById("addStudentBtn");
+const addBtn =
+    document.getElementById("addBtn");
 
-const closeModal =
-    document.getElementById("closeModal");
+const modalClose =
+    document.getElementById("modalClose");
 
 const form =
     document.getElementById("studentForm");
 
-const searchInput =
-    document.getElementById("searchInput");
+const table =
+    document.getElementById("studentTable");
 
-const themeBtn =
-    document.getElementById("themeBtn");
 
-const clearBtn =
-    document.getElementById("clearBtn");
-
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const sidebar =
-    document.querySelector(".sidebar");
-
-// DISPLAY STUDENTS
-
-function displayStudents(data = students) {
-
-    table.innerHTML = "";
-
-    data.forEach(function(student) {
-
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-
-            <td>#${student.id}</td>
-            <td>
-                <strong>${student.name}</strong>
-            </td>
-            <td>
-                ${student.email}
-            </td>
-            <td>
-                ${student.course}
-            </td>
-            <td>
-                ${student.attendance}%
-            </td>
-
-            <td>
-                <span class="${
-                    student.fee === "Paid"
-                    ? "status-paid"
-                    : "status-pending"
-                }">
-                    ${student.fee}
-                </span>
-            </td>
-        `;
-
-        table.appendChild(row);
-
-    });
-
-    updateStatistics();
-
-}
-// UPDATE STATISTICS
-
-function updateStatistics() {
-
-    studentCount.textContent =
-        students.length;
-
-    const pending =
-        students.filter(function(student) {
-
-            return student.fee === "Pending";
-
-        });
-
-    pendingCount.textContent =
-        pending.length;
-
-}
 // OPEN MODAL
 
-addStudentBtn.addEventListener("click", function() {
+addBtn.addEventListener("click", function () {
 
     modal.style.display = "flex";
 
 });
+
+
 // CLOSE MODAL
 
-closeModal.addEventListener("click", function() {
+modalClose.addEventListener("click", function () {
 
     modal.style.display = "none";
 
 });
 
+
 // ADD STUDENT
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
+
     const name =
         document.getElementById("name").value;
-
-    const email =
-        document.getElementById("email").value;
 
     const course =
         document.getElementById("course").value;
@@ -136,97 +146,80 @@ form.addEventListener("submit", function(event) {
     const fee =
         document.getElementById("fee").value;
 
-    const newStudent = {
 
-        id: students.length + 1,
-        name: name,
-        email: email,
-        course: course,
-        attendance: attendance,
-        fee: fee
-    };
+    const row =
+        document.createElement("tr");
 
-    students.push(newStudent);
 
-    // SAVE TO LOCAL STORAGE
+    row.innerHTML = `
 
-    localStorage.setItem(
-        "students",
-        JSON.stringify(students)
-    );
+        <td>New</td>
 
-    displayStudents();
+        <td>${name}</td>
+
+        <td>${course}</td>
+
+        <td>${attendance}%</td>
+
+        <td>
+
+            <span class="${
+                fee === "Paid"
+                    ? "paid"
+                    : "pending"
+            }">
+
+                ${fee}
+
+            </span>
+
+        </td>
+
+    `;
+
+
+    table.appendChild(row);
+
 
     form.reset();
 
     modal.style.display = "none";
-});
-// SEARCH
-searchInput.addEventListener("input", function() {
-
-    const search =
-        searchInput.value.toLowerCase();
-
-    const filtered =
-        students.filter(function(student) {
-
-            return (
-
-                student.name
-                    .toLowerCase()
-                    .includes(search)
-
-                ||
-
-                student.email
-                    .toLowerCase()
-                    .includes(search)
-
-                ||
-
-                student.course
-                    .toLowerCase()
-                    .includes(search)
-
-            );
-
-        });
-    displayStudents(filtered);
 
 });
-// DARK MODE
-themeBtn.addEventListener("click", function() {
 
-    document.body.classList.toggle("dark");
 
-    if (document.body.classList.contains("dark")) {
+// ================= SEARCH =================
 
-        themeBtn.textContent = "☀️";
+const search =
+    document.getElementById("search");
 
-    } else {
 
-        themeBtn.textContent = "🌙";
-    }
+search.addEventListener("input", function () {
+
+    const value =
+        search.value.toLowerCase();
+
+
+    const rows =
+        table.querySelectorAll("tr");
+
+
+    rows.forEach(function (row) {
+
+        const text =
+            row.innerText.toLowerCase();
+
+
+        if (text.includes(value)) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
 });
-// CLEAR ALL
-
-clearBtn.addEventListener("click", function() {
-
-    const confirmDelete =
-        confirm("Delete all students?");
-
-    if (confirmDelete) {
-
-        students = [];
-
-        localStorage.removeItem("students");
-
-        displayStudents();
-    }
-});
-// MOBILE MENU
-menuBtn.addEventListener("click", function() {
-    sidebar.classList.toggle("show");
-});
-// INITIAL DISPLAY 
-displayStudents();
