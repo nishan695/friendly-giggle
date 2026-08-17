@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4 Corner Drawer</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        /*  HIDE CHECKBOXES*/
+
+        input {
+            display: none;
+        }
+
+
+        /* COMMON MENU BUTTON */
+
+        .menu {
+            position: fixed;
+            z-index: 10;
+
+            width: 50px;
+            height: 50px;
+
+            background: #222;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            border-radius: 10px;
+        }
+
+
+        /* TOP LEFT BUTTON*/
+
+        .top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+
+        /* TOP RIGHT BUTTON */
+
+        .top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+
+        /*  BOTTOM LEFT BUTTON*/
+
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+
+
+        /*BOTTOM RIGHT BUTTON*/
+
+        .bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+
+        /*COMMON DRAWER*/
+
+        .drawer {
+            position: fixed;
+
+            width: 280px;
+            height: 100vh;
+
+            background: #222;
+
+            padding-top: 80px;
+
+            transition: 0.4s;
+
+            z-index: 5;
+        }
+
+
+        .drawer a {
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 18px 25px;
+
+            font-size: 18px;
+        }
+
+
+        .drawer a:hover {
+            background: #444;
+        }
+
+
+        /* TOP LEFT DRAWER */
+
+        .drawer-left {
+            top: 0;
+            left: -280px;
+        }
+
+        #top-left:checked ~ .drawer-left {
+            left: 0;
+        }
+
+
+        /*TOP RIGHT DRAWER*/
+
+        .drawer-right {
+            top: 0;
+            right: -280px;
+        }
+
+        #top-right:checked ~ .drawer-right {
+            right: 0;
+        }
+
+
+        /* BOTTOM LEFT DRAWER*/
+
+        .drawer-bottom-left {
+            bottom: 0;
+            left: -280px;
+        }
+
+        #bottom-left:checked ~ .drawer-bottom-left {
+            left: 0;
+        }
+
+
+        /* BOTTOM RIGHT DRAWER*/
+
+        .drawer-bottom-right {
+            bottom: 0;
+            right: -280px;
+        }
+
+        #bottom-right:checked ~ .drawer-bottom-right {
+            right: 0;
+        }
+
+
+        /* CONTENT*/
+
+        .content {
+            text-align: center;
+
+            padding-top: 200px;
+        }
+
+        .content h1 {
+            font-size: 40px;
+        }
+            body {
+    margin: 0;
+
+    background-image: url("phooto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!--  TOP LEFT-->
+
+    <input type="checkbox" id="top-left">
+
+    <label for="top-left" class="menu top-left">
+        ☰
+    </label>
+
+    <div class="drawer drawer-left">
+
+        <a href="#"> Home</a>
+        <a href="#"> Profile</a>
+        <a href="#"> Settings</a>
+        <a href="#"> Contact</a>
+
+    </div>
+
+
+
+    <!-- TOP RIGHT-->
+
+    <input type="checkbox" id="top-right">
+
+    <label for="top-right" class="menu top-right">
+        ☰
+    </label>
+
+    <div class="drawer drawer-right">
+
+        <a href="#"> Home</a>
+        <a href="#"> Profile</a>
+        <a href="#"> Settings</a>
+        <a href="#"> Contact</a>
+
+    </div>
+
+
+
+    <!-- BOTTOM LEFT-->
+
+    <input type="checkbox" id="bottom-left">
+
+    <label for="bottom-left" class="menu bottom-left">
+        ☰
+    </label>
+
+    <div class="drawer drawer-bottom-left">
+
+        <a href="#"> Home</a>
+        <a href="#"> Profile</a>
+        <a href="#"> Settings</a>
+        <a href="#"> Contact</a>
+
+    </div>
+
+
+
+    <!--BOTTOM RIGHT-->
+
+    <input type="checkbox" id="bottom-right">
+
+    <label for="bottom-right" class="menu bottom-right">
+        &#9776;
+    </label>
+
+    <div class="drawer drawer-bottom-right">
+
+        <a href="#"> Home</a>
+        <a href="#"> Profile</a>
+        <a href="#"> Settings</a>
+        <a href="#"> Contact</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1> 4 corner drawer </h1>
+
+        <p>
+            Click any ☰ button
+        </p>
+
+    </div>
+
+
+</body>
+</html>

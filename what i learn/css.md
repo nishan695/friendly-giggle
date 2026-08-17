@@ -47,7 +47,7 @@ Especially:
 }
 🎯 CSS layout
 Flexbox
-You must become comfortable with:
+must become comfortable with:
 display: flex;
 justify-content: center;
 align-items: center;

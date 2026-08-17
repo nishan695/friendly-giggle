@@ -1,0 +1,66 @@
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #menu {
+            display: none;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .drawer {
+            position: fixed;
+            top: 0;
+            left: -250px;
+
+            width: 250px;
+            height: 100vh;
+
+            background-color: #222;
+
+            transition: 0.3s;
+        }
+        .drawer a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .drawer {
+           top: 0;
+           left: -250px;
+}
+
+        .drawer a:hover {
+            background-color: #444;
+        }
+
+        #menu:checked ~ .drawer {
+            left: 0;
+        }
+ * {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image: url("phooto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
