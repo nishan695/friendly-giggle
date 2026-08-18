@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Homes</title>
+<link rel="stylesheet" href="house.css">
+
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- trees: same image used twice, right side mirrored with CSS -->
+  <img class="tree left" src="tree.png" alt="tree">
+  <img class="tree right" src="tree.png" alt="tree">
+
+  <!-- MODERN: behind the house -->
+  <h1 class="text-modern" id="lineModern">MODERN</h1>
+
+  <!-- house: in front of MODERN, behind HOMES -->
+  <div class="house-wrap">
+    <img src="house.png" alt="house">
+  </div>
+
+  <!-- grass strip: foreground ground/garden line -->
+  <div class="grass"></div>
+
+  <!-- HOMES + tagline + button: in front of the house -->
+  <div class="front-text">
+    <h2 class="text-homes" id="lineHomes">HOMES</h2>
+    <p class="tagline">Contemporary <strong>homes</strong> created for sophisticated living.</p>
+    <button class="view-projects">
+      View Projects
+      <span class="arrow">↗</span>
+    </button>
+  </div>
+
+  <div class="navbar">
+    <div class="logo">Nordic<br>Frame</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="get-in-touch">Get in Touch</button>
+      <div class="icon-circle">◎</div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><strong id="stat1">0</strong>Completed Homes</div>
+    <div class="stat"><strong id="stat2">0</strong>Years of Experience</div>
+    <div class="stat"><strong id="stat3">0</strong>Design Awards</div>
+  </div>
+</div>
+
+<script src="house.js" defer></script>
+
+</body>
+</html>

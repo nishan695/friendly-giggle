@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.car {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    font-size: 60px;
+    animation: drive 5s linear infinite;
+}
+
+@keyframes drive {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="car">🚗</div>
+
+</body>
+</html>
